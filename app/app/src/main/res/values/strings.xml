@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Timetable for HSE</string>
+    <string name="main_activity_student_button">Расписание для студентов</string>
+    <string name="main_activity_teacher_button">Расписание для преподавателей</string>
 </resources>
