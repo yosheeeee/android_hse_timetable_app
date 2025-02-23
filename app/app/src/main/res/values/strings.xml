@@ -2,4 +2,19 @@
     <string name="app_name">Timetable for HSE</string>
     <string name="main_activity_student_button">Расписание для студентов</string>
     <string name="main_activity_teacher_button">Расписание для преподавателей</string>
+    <string name="teachers_select_teacher_label">Выберите преподавателя:</string>
+    <string name="student_select_ep">Образовательная программа:</string>
+    <string name="student_select_course">Курс:</string>
+    <string name="student_select_group">Группа:</string>
+    <string name="current_time">Сейчас: %s</string>
+    <string name="para_yes">Идет пара</string>
+    <string name="para_no">Нет пар</string>
+    <string name="para_name">Пара: %s</string>">
+    <string name="para_cabinet">Кабинет: %s</string>
+    <string name="para_corpus">Корпус: %s</string>
+    <string name="para_prepod">Преподаватель: %s</string>
+    <string name="teacher_day_timetable">Расписание на день</string>
+    <string name="teacher_week_timetable">Расписание на неделю</string>
+
 </resources>
+

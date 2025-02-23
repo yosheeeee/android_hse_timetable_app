@@ -1,14 +1,15 @@
 package org.hse.baseproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,17 +23,17 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        var studentButton = findViewById(R.id.student_button);
-        var teacherButton = findViewById(R.id.teacher_button);
-        addButtonClickListener(studentButton, "Расписaние студентов");
-        addButtonClickListener(teacherButton, "Расписание преподавателей");
+        addButtonClickListener(R.id.student_button, StudentTimetable.class);
+        addButtonClickListener(R.id.teacher_button, TeachersTimetable.class);
     }
 
-    protected void addButtonClickListener(View button,CharSequence text){
+    protected void addButtonClickListener(int id, Class<? extends AppCompatActivity> activityClass){
+        var button = findViewById(id);
         button.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,text,Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, activityClass);
+                startActivity(intent);
             }
         });
     }
