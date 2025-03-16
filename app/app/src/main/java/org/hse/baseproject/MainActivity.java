@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         });
         addButtonClickListener(R.id.student_button, StudentTimetable.class);
         addButtonClickListener(R.id.teacher_button, TeachersTimetable.class);
+        addButtonClickListener(R.id.settings_button, Settings.class);
     }
 
     protected void addButtonClickListener(int id, Class<? extends AppCompatActivity> activityClass){

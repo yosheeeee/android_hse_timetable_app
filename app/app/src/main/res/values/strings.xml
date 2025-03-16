@@ -2,6 +2,7 @@
     <string name="app_name">Timetable for HSE</string>
     <string name="main_activity_student_button">Расписание для студентов</string>
     <string name="main_activity_teacher_button">Расписание для преподавателей</string>
+    <string name="main_activity_settings_button">Настройки</string>
     <string name="teachers_select_teacher_label">Выберите преподавателя:</string>
     <string name="student_select_ep">Образовательная программа:</string>
     <string name="student_select_course">Курс:</string>
@@ -15,6 +16,11 @@
     <string name="para_prepod">Преподаватель: %s</string>
     <string name="teacher_day_timetable">Расписание на день</string>
     <string name="teacher_week_timetable">Расписание на неделю</string>
+    <string name="settings_change_avatar_button">Сменить Аватар</string>
+    <string name="settings_save_button">Сохранить</string>
+    <string name="settings_name_hint">Ваше имя</string>
+    <string name="settings_light">Текущая освещенность: %.2f</string>
+
 
 </resources>
 
