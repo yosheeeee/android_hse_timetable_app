@@ -23,57 +23,21 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class StudentTimetable extends AppCompatActivity {
+public class StudentTimetable extends BaseActiviy {
     private static final int courseSpinnerId = R.id.select_course_spinner;
     private static final int epSpinnerId = R.id.select_ep_spinner;
     private static final int groupSpinnerId = R.id.select_group_spinner;
-    private static final int timeId = R.id.current_time;
-    private static final int paraStatusId = R.id.para_status;
-    private static final int paraNameId = R.id.para_name;
-    private static final int paraCabinetId = R.id.para_cabinet;
-    private static final int paraCorpusId = R.id.para_corpus;
-    private static final int paraPrepodId = R.id.para_prepod;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_student_timetable);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        initData();
-    }
-    private void initTime(){
-        TextView timeView = findViewById(timeId);
-        Date date = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm, EEEE", new Locale("ru", "RU"));
-        timeView.setText(String.format(getString(R.string.current_time), dateFormat.format(date)));
-    }
-
-    private void initParaState(){
-        TextView paraStatusView = findViewById(paraStatusId);
-        paraStatusView.setText(getString(R.string.para_no));
-        TextView paraNameView = findViewById(paraNameId);
-        paraNameView.setText(String.format(getString(R.string.para_name), ""));
-        TextView paraCabinetView = findViewById(paraCabinetId);
-        paraCabinetView.setText(String.format(getString(R.string.para_cabinet), ""));
-        TextView paraCorpusView = findViewById(paraCorpusId);
-        paraCorpusView.setText(String.format(getString(R.string.para_corpus),""));
-        TextView paraPrepodView = findViewById(paraPrepodId);
-        paraPrepodView.setText(String.format(getString(R.string.para_prepod),""));
-    }
-
-    private void initTextState(){
-        initTime();
-        initParaState();
-    }
-
-    private void initData(){
+    protected void initData(){
         initTextState();
         initGroupSpinners();
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_student_timetable;
     }
 
     private List<EpInfo> getEpList(){
