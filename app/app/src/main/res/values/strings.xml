@@ -20,6 +20,7 @@
     <string name="settings_save_button">Сохранить</string>
     <string name="settings_name_hint">Ваше имя</string>
     <string name="settings_light">Текущая освещенность: %.2f</string>
+    <string name="settings_saved">Настройки сохранены</string>
 
 
 </resources>

@@ -15,7 +15,8 @@
             android:orientation="horizontal"
             android:weightSum="1"
             tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp">
+            tools:layout_editor_absoluteY="1dp"
+            tools:ignore="MissingConstraints">
 
             <LinearLayout
                 android:layout_weight="0.5"
@@ -68,6 +69,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=""
+                    />
+                <TextView
+                    android:id="@+id/settings_sensor_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:scrollbars="vertical"
+                    android:maxLines="10"
                     />
             </LinearLayout>
         </LinearLayout>
