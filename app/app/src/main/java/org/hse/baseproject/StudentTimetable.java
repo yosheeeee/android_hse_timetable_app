@@ -33,11 +33,42 @@ public class StudentTimetable extends BaseActiviy {
     protected void initData(){
         initTextState();
         initGroupSpinners();
+
     }
 
     @Override
     protected int getLayoutId() {
         return R.layout.activity_student_timetable;
+    }
+
+    @Override
+    protected void showSchedule(ScheduleType scheduleType) {
+        Spinner epSpinner = findViewById(epSpinnerId);
+        if (epSpinner == null) {
+            return;
+        }
+        EpInfo ep = (EpInfo) epSpinner.getSelectedItem();
+        if (ep == null) {
+            return;
+        }
+        Spinner courseSpinner = findViewById(courseSpinnerId);
+        if (courseSpinner == null) {
+            return;
+        }
+        int course = (int)courseSpinner.getSelectedItem();
+
+        Spinner groupSpinner = findViewById(groupSpinnerId);
+        if (groupSpinner == null) {
+            return;
+        }
+        int group = (int)groupSpinner.getSelectedItem();
+        var selectedSchedule=  new SelectedSchedule();
+        selectedSchedule.ScheduleMode = ScheduleMode.STUDENT;
+        selectedSchedule.ScheduleType = scheduleType;
+        selectedSchedule.Ep = ep.getName();
+        selectedSchedule.GroupNumber = group;
+        selectedSchedule.Course = course;
+        showScheduleActivity(selectedSchedule);
     }
 
     private List<EpInfo> getEpList(){

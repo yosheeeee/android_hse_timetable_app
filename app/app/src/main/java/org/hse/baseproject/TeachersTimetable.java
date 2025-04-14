@@ -1,31 +1,17 @@
 package org.hse.baseproject;
 
-import static android.content.ContentValues.TAG;
-
-import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.Objects;
 
 public class TeachersTimetable extends BaseActiviy {
     private static final int spinnerId = R.id.select_teacher_spinner;
-
 
     private List<Group> getGroupList(){
         List<Group> groups = new ArrayList<>();
@@ -54,7 +40,6 @@ public class TeachersTimetable extends BaseActiviy {
         });
     }
 
-
     @Override
     protected void initData(){
         initSpinner();
@@ -64,5 +49,21 @@ public class TeachersTimetable extends BaseActiviy {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_teachers_timetable;
+    }
+
+    @Override
+    protected void showSchedule(ScheduleType scheduleType) {
+        Spinner spinner = findViewById(R.id.select_teacher_spinner);
+        var selectedItem = (Group) spinner.getSelectedItem();
+        if (selectedItem == null){
+            return;
+        }
+        Log.d("Selected_teacher", selectedItem.getId().toString());
+        var selectedSchedule = new SelectedSchedule();
+        selectedSchedule.ScheduleMode = ScheduleMode.TEACHER;
+        selectedSchedule.ScheduleType = scheduleType;
+        selectedSchedule.TeacherId = selectedItem.getId();
+        selectedSchedule.TeacherName = selectedItem.getName();
+        showScheduleActivity(selectedSchedule);
     }
 }

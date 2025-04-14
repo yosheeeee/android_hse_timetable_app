@@ -21,7 +21,9 @@
     <string name="settings_name_hint">Ваше имя</string>
     <string name="settings_light">Текущая освещенность: %.2f</string>
     <string name="settings_saved">Настройки сохранены</string>
-
-
+    <string name="schedule_mode_teacher">Расписание для преподавателя: %s на %s.</string>
+    <string name="schedule_mode_student">Расписание для %s %d курс %d группа на %s.</string>
+    <string name="week">неделю</string>
+    <string name="day">день</string>
 </resources>
 

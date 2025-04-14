@@ -10,8 +10,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
+    public static final String URL = "https://api.ipgeolocation.io/ipgeo?apiKey=b03018f75ed94023a005637878ec0977";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
         addButtonClickListener(R.id.settings_button, Settings.class);
     }
 
-    protected void addButtonClickListener(int id, Class<? extends AppCompatActivity> activityClass){
+    protected void addButtonClickListener(int id, Class<? extends AppCompatActivity> activityClass) {
         var button = findViewById(id);
-        button.setOnClickListener( new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, activityClass);

@@ -111,6 +111,7 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/button_day"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -119,7 +120,7 @@
                 android:text="@string/teacher_day_timetable" />
 
             <Button
-                android:id="@+id/teacher_week_timetable"
+                android:id="@+id/button_week"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
